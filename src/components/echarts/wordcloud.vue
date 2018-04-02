@@ -1,8 +1,7 @@
 <template>
-  <div>
-      <div class="cloud">
-        <div id="wordcloud1" class="wordcloud"></div>
-        <div id="wordcloud2" class="wordcloud"></div>
+  <div id="content">
+    <div class="cloud">
+        <div id="wordcloud"></div>
     </div>
     
   </div>
@@ -58,20 +57,20 @@
           }
         },
         data: [
-              { "name": "长峙岛", "value": 1 },
+              { "name": "鸡公坑", "value": 1 },
               { "name": "新城大桥", "value": 1 },
               { "name": "杨咏曼图书馆", "value": 1 },
               { "name": "揽月台", "value": 1 },
               { "name": "揽月湖", "value": 2 },
               { "name": "恒尊体育场", "value": 2 },
               { "name": "杨存国报告厅", "value": 2 },
-              { "name": "莲池咖啡", "value": 2 },
-              { "name": "紫薇山公园", "value": 2 },
-              { "name": "朱家尖大桥", "value": 3 },
-              { "name": "海科楼", "value": 3 },
-              { "name": "H125A", "value": 3 },
-              { "name": "海洋科学城", "value": 8 },
-              { "name": "鸡公坑", "value": 9 }
+              { "name": "莲池咖啡", "value": 3 },
+              { "name": "紫薇山公园", "value": 4 },
+              { "name": "朱家尖大桥", "value": 5 },
+              { "name": "海科楼", "value": 6 },
+              { "name": "H125A", "value": 6 },
+              { "name": "海洋科学城", "value": 7 },
+              { "name": "长峙岛", "value": 8 }
         ]
       }]
     }
@@ -81,58 +80,30 @@
     data() {
       return {
         wordcloud: null
-      };
+      }
     },
     methods: {
       drawWord (id) {
-        this.wordcloud = echarts.init(document.getElementById(id));
+        this.wordcloud = echarts.init(document.getElementById(id))
         this.wordcloud.setOption(options)
       }
     },
     mounted() {
-        this.drawWord('wordcloud1')
-        this.drawWord('wordcloud2')
-    //   this.$nextTick(function() {
-    //     this.drawWord('wordcloud');
-    //     var that = this;
-    //     var resizeTimer = null;
-    //     window.onresize = function() {
-    //       if (resizeTimer) clearTimeout(resizeTimer);
-    //       resizeTimer = setTimeout(function() {
-    //         that.drawWord('wordcloud');
-    //       }, 100);
-    //     }
-    //   })
+        this.drawWord('wordcloud')
     }
   }
 </script>
 
 <style scoped>
-.cloud{
-    border-top: 10px solid #eee;
-    position: relative;
-    display: flex;
+#content{
+  height: 400px;
 }
-  .wordcloud {
-    /* max-width: 800px;*/
-    flex-grow: 1;
-    min-width: 600px; 
+.cloud{
+    z-index: 10;
+    height: 400px;
+}
+  #wordcloud {
     height: 400px;
     background: #fff;
- 
-    position: relative;
-    /* position: relative;
-    left: 50%;
-    width: 90%;
-    height: 600px;
-    margin-left: -45%;
-    box-shadow: 0 0 10px #726dd1;
-    border-radius: 10px; */
   }   
-#wordcloud1{
-    margin-right: 5px;
-}
-#wordcloud2{
-    margin-left: 5px;
-}
 </style>

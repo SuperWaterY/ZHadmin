@@ -15,7 +15,7 @@
  
 <script>
 
-import screenfull from '@/components/layout/screenfull'
+import screenfull from '@/components/common/screenfull'
 
 export default {
   name: 'subnav',
@@ -116,7 +116,7 @@ export default {
   .breadnavs{
     display: inline-block; 
     position: relative;
-    width: 90px;
+    min-width: 90px;
     height: 26px;
     margin-right: 18px;  
     line-height: 26px;

@@ -168,7 +168,7 @@ export default {
 <style scoped lang='less'>
 .el-menu-vertical-demo{
   border: none;
-  transition: width 0.7s ease-out;
+  transition: all 0.7s ease-out;
 
   .el-menu-item{
     border: none;

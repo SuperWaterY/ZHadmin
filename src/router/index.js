@@ -6,35 +6,60 @@ import Layout from '@/components/layout/layout'
 import index from '@/components/viewpage/index'
 import error from '@/components/common/error'
 
-import datainfo from '@/components/viewpage/panel/datainfo.vue'
-import partinfo from '@/components/viewpage/panel/partinfo'
-import sysdesign from '@/components/viewpage/panel/sysdesign'
-import password from '@/components/viewpage/panel/password'
 
-import infosys from '@/components/viewpage/myassets/infosys'
-import toinfo from '@/components/viewpage/myassets/toinfo'
-import infoing from '@/components/viewpage/myassets/infoing'
-import infoed from '@/components/viewpage/myassets/infoed'
-import inforef from '@/components/viewpage/myassets/inforef'
-import infoitem from '@/components/viewpage/myassets/infoitem'
+const datainfo = () => import('@/components/viewpage/panel/datainfo.vue')
+const partinfo = () => import('@/components/viewpage/panel/partinfo.vue')
+const sysdesign = () => import('@/components/viewpage/panel/sysdesign.vue')
+const password = () => import('@/components/viewpage/panel/password.vue')
+// import datainfo from '@/components/viewpage/panel/datainfo.vue'
+// import partinfo from '@/components/viewpage/panel/partinfo'
+// import sysdesign from '@/components/viewpage/panel/sysdesign'
+// import password from '@/components/viewpage/panel/password'
+const infosys = () => import('@/components/viewpage/myassets/infosys')
+const toinfo = () => import('@/components/viewpage/myassets/toinfo')
+const infoing = () => import('@/components/viewpage/myassets/infoing')
+const infoed = () => import('@/components/viewpage/myassets/infoed')
+const inforef = () => import('@/components/viewpage/myassets/inforef')
+const infoitem = () => import('@/components/viewpage/myassets/infoitem')
 
-import todos from '@/components/viewpage/catalog/todos'
-import todeals from '@/components/viewpage/catalog/todeals'
-import backed from '@/components/viewpage/catalog/backed'
-import dealed from '@/components/viewpage/catalog/dealed'
+// import infosys from '@/components/viewpage/myassets/infosys'
+// import toinfo from '@/components/viewpage/myassets/toinfo'
+// import infoing from '@/components/viewpage/myassets/infoing'
+// import infoed from '@/components/viewpage/myassets/infoed'
+// import inforef from '@/components/viewpage/myassets/inforef'
+// import infoitem from '@/components/viewpage/myassets/infoitem'
+const todos = () => import('@/components/viewpage/catalog/todos')
+const todeals = () => import('@/components/viewpage/catalog/todeals')
+const backed = () => import('@/components/viewpage/catalog/backed')
+const dealed = () => import('@/components/viewpage/catalog/dealed')
 
-import tableconf from '@/components/viewpage/sysconfig/tableconf/tableconf'
-import infosysconfig from '@/components/viewpage/sysconfig/tableconf/infosysconfig'
-import itemconfig from '@/components/viewpage/sysconfig/tableconf/itemconfig'
-import refconfig from '@/components/viewpage/sysconfig/tableconf/refconfig'
-import userconfig from '@/components/viewpage/sysconfig/tableconf/userconfig'
+// import todos from '@/components/viewpage/catalog/todos'
+// import todeals from '@/components/viewpage/catalog/todeals'
+// import backed from '@/components/viewpage/catalog/backed'
+// import dealed from '@/components/viewpage/catalog/dealed'
+const tableconf = () => import('@/components/viewpage/sysconfig/tableconf/tableconf')
+const infosysconfig = () => import('@/components/viewpage/sysconfig/tableconf/infosysconfig')
+const itemconfig = () => import('@/components/viewpage/sysconfig/tableconf/itemconfig')
+const refconfig = () => import('@/components/viewpage/sysconfig/tableconf/refconfig')
+const userconfig = () => import('@/components/viewpage/sysconfig/tableconf/userconfig')
+// import tableconf from '@/components/viewpage/sysconfig/tableconf/tableconf'
+// import infosysconfig from '@/components/viewpage/sysconfig/tableconf/infosysconfig'
+// import itemconfig from '@/components/viewpage/sysconfig/tableconf/itemconfig'
+// import refconfig from '@/components/viewpage/sysconfig/tableconf/refconfig'
+// import userconfig from '@/components/viewpage/sysconfig/tableconf/userconfig'
+const menuhandle = () => import('@/components/viewpage/sysconfig/menuhandle')
+const cateconfig = () => import('@/components/viewpage/sysconfig/cateconfig')
+const charconfig = () => import('@/components/viewpage/sysconfig/charconfig')
+const parthandle = () => import('@/components/viewpage/sysconfig/parthandle')
+const userhandle = () => import('@/components/viewpage/sysconfig/userhandle')
+const rolehandle = () => import('@/components/viewpage/sysconfig/rolehandle')
 
-import menuhandle from '@/components/viewpage/sysconfig/menuhandle'
-import cateconfig from '@/components/viewpage/sysconfig/cateconfig'
-import charconfig from '@/components/viewpage/sysconfig/charconfig'
-import parthandle from '@/components/viewpage/sysconfig/parthandle'
-import userhandle from '@/components/viewpage/sysconfig/userhandle'
-import rolehandle from '@/components/viewpage/sysconfig/rolehandle'
+// import menuhandle from '@/components/viewpage/sysconfig/menuhandle'
+// import cateconfig from '@/components/viewpage/sysconfig/cateconfig'
+// import charconfig from '@/components/viewpage/sysconfig/charconfig'
+// import parthandle from '@/components/viewpage/sysconfig/parthandle'
+// import userhandle from '@/components/viewpage/sysconfig/userhandle'
+// import rolehandle from '@/components/viewpage/sysconfig/rolehandle'
 
 import ctrllog from '@/components/viewpage/sysctrl/ctrllog'
 import linkctrl from '@/components/viewpage/sysctrl/linkctrl'

@@ -19,6 +19,8 @@
     "screenfull": "^3.3.2",
     "vue": "^2.5.2",
     "vue-axios": "^2.0.2",
+    "vue-count-to": "^1.0.13",
+    "vue-loading-template": "^0.1.7",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "xlsx": "^0.12.5"

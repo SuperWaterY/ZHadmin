@@ -1,17 +1,27 @@
 <template>
-  <div class="">
+  <div id="syscount">
     <div class="bigdata">
       <div class="dataitem">
-        <span class="icon" style="background:#12b2b4"><i class="fa fa-cubes fa-3x"></i></span>
-        <p class="textinfo">信息系统总数 : <span class="cny">337</span> 个</p>
+        <span class="icon0" ><i class="fa fa-cubes fa-3x"></i></span>
+        <p class="textinfo">信息系统总数 : 
+        <span class="cny">
+          <count-to :startVal="startVal" :endVal="endVal" :duration="2000"></count-to>
+        </span> 个</p>
       </div>
       <div class="dataitem">
-        <span class="icon" style="background:#ec9d19"><i class="fa fa-database fa-3x"></i></span>
-        <p class="textinfo">系统年度运维总金额总数 : <span class="cny">100</span> 亿元</p>
+        <span class="icon1" ><i class="fa fa-database fa-3x"></i></span>
+        <p class="textinfo">系统年度运维总金额总数 : 
+        <span class="cny">
+          <count-to :start-val='0' :end-val='3337' :duration='2000' :decimals='0' separator=',' prefix='¥ ' suffix='' ></count-to>
+        </span>亿元</p>
       </div>
       <div class="dataitem">
-        <span class="icon" style="background:#ed5565"><i class="fa fa-bar-chart fa-3x"></i></span>
-        <p class="textinfo">预估年度运维总金额 : <span class="cny">101</span> 亿元</p>
+        <span class="icon2" ><i class="fa fa-bar-chart fa-3x"></i></span>
+        <p class="textinfo">预估年度运维总金额 : 
+          <span class="cny">
+            <count-to :startVal="startVal" :endVal="endVal+20" :duration="2000"></count-to>
+          </span>
+        </p>
       </div>
     </div>
     <div class="search">
@@ -19,9 +29,9 @@
       <el-button type="primary" ><i class="fa fa-search"></i> 搜索</el-button>
     </div>
     <el-row :gutter="10">
-      <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6"  v-for=" (item, index) in content " :key="index">
+      <el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6"  v-for=" (item, index) in content " :key="index">
         <div class="grid-content bg-purple">
-          <p class="title">{{item.title}}</p>
+          <p class="title"><span>{{item.title}}</span></p>
           <p class="partname">单位名称：<span>{{item.partname}}</span> </p>
           <p class="fund">年度运维金额： <span> {{item.fund}} </span>万元</p>
         </div>
@@ -43,12 +53,17 @@
 </template>
 
 <script>
-
+import countTo from 'vue-count-to'
 export default {
   name: 'sysdesign',
+  components: {
+    countTo
+  },
   data () {
     return {
       input: '',
+      startVal: 0,
+      endVal: 337,
       pagination:{
         pageSizes: [5,10,15,20],
         pageSize: 10,
@@ -98,6 +113,27 @@ export default {
       line-height: 80px;
       margin-right: 10px;
       border-radius: 5px;
+      .icon0{
+        background:#12b2b4
+      }
+      .icon0:hover{
+        background:#fff;
+        color:#12b2b4;
+      }
+      .icon1{
+        background:#ec9d19
+      }
+      .icon1:hover{
+        background:#fff;
+        color: #ec9d19;
+      }
+      .icon2{
+        background:#ed5565
+      }
+      .icon2:hover{
+        background:#fff;
+        color: #ed5565;
+      }
       .textinfo{
         float: right;
         line-height: 80px;
@@ -107,7 +143,7 @@ export default {
           color: #d31f07
         }
       }
-      .icon{
+      .icon0, .icon1, .icon2 {
         display: inline-block;
         text-align: center;
         line-height: 60px;
@@ -115,6 +151,7 @@ export default {
         width: 80px;
         border-radius: 5px 0 0 5px;
         margin-right: 10px;
+        transition: all 0.4s ease-out;
         .fa{
           line-height: 80px;
         }
@@ -128,10 +165,14 @@ export default {
       width: 250px !important;
     }
   }
-  
-  .el-col {
-    border-radius: 4px;
+  .el-row{
+    width:100%;
+    margin: 0 !important;
+    .el-col {
+      border-radius: 4px;
+    }    
   }
+
   .bg-purple {
     background: #fff;
   }
@@ -144,13 +185,26 @@ export default {
     min-height: 140px;
     margin-bottom: 20px;
     .title{
-      height: 60px;
+      height: 300px;
       font-weight: bold;
-      color: #333;
-      font-size: 18px;
-      text-align: center;
-      line-height: 60px;
-      background: #ec9d19;
+      color: #fff;
+      background-image: url(https://i.loli.net/2017/12/17/5a36219e9b0ba.jpg);
+      background-size: cover;
+      position: relative;
+      span{
+        color: #fff;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% - 10px);
+        height: 60px;
+        left: 10px;
+        bottom: 10px;
+        font-size: 20px;
+        text-align: left;
+        line-height: 60px;
+      }
+      // -webkit-filter: blur(10px);
+      // filter: blur(10px);
     }
     .partname{
       height: 39px;
@@ -160,7 +214,7 @@ export default {
       color: #888;
       font-size: 15px;
       span{
-        color: #12b2b4;
+        color: #666;
         font-size: 18px;
         font-weight: bold;
       }

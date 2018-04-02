@@ -15,7 +15,7 @@
                     <router-view/>
                 </transition>
             </div>
-        </div> 
+        </div>
     </div>    
   </div>
 </template>
@@ -133,7 +133,8 @@ body{
         position: fixed;
         height: calc(100% - 61px);
         top: 60px; 
-        width: 180px;transition: width 0.7s ease-out;
+        width: 180px;
+        transition: width 0.7s ease-out;
     }
     .close{
         width: 64px;
